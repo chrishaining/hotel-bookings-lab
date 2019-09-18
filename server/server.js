@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -18,6 +18,6 @@ MongoClient.connect('mongodb://localhost:27017')
 })
 .catch(console.err); 
 
-app.listen(3000, function () {
+app.listen(3000, function() {
   console.log(`Listening on port ${ this.address().port }`);
 });

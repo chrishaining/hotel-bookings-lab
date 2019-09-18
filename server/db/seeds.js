@@ -1,7 +1,7 @@
-use bookings;
+use bookingsdb;
 db.dropDatabase();
 
-db.bookings.insertMany([
+db.bookingsdb.insertMany([
   {
     name: "Davey Attenborough",
     email: "davey@animalwatching.com",

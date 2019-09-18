@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <h1>Hello world</h1>
     <bookings-grid :bookings="bookings" /> 
   </div>
 </template>
 
 <script>
 
-import BookingService from './services/BookingService'
+import BookingService from './services/BookingService.js'
+import BookingsGrid from './components/BookingsGrid'
 
 export default {
   name: 'app',
@@ -16,15 +16,21 @@ export default {
     bookings: []
     }
   },
-methods: {
-  fetchData() {
-    BookingService.getBookings()
-    .then(bookings => this.bookings = bookings);
+  components: {
+    'bookings-grid': BookingsGrid
+  },
+  mounted(){
+    this.fetchData();
+  }, 
+  methods: {
+    fetchData() {
+      BookingService.getBookings()
+      .then(bookings => this.bookings = bookings);
+    }
   }
-}
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

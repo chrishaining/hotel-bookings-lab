@@ -4,6 +4,7 @@ const createRouter = function(collection) {
 
   const router = express.Router();
 
+  //index
   router.get('/', (req, res) => {
     collection 
     .find()
@@ -16,9 +17,19 @@ const createRouter = function(collection) {
       });
     }); 
 
-  //index
 
   //show
+  router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    collection
+      .findOne({ _id: ObjectId(id) })
+      .then(doc => res.json(doc))
+      .catch(err => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  })
   
   //create
   

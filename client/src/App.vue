@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div id="app">
     <bookings-form />
     <bookings-grid :bookings="bookings" /> 

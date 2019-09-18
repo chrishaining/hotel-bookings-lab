@@ -1,5 +1,17 @@
-<template>
-  
+<template lang="html">
+  <form id="bookings-form" v-on:submit="addBooking" method="post">
+    <h2>Add a booking</h2>
+    <label for="name">Name</label>
+    <input type="text" v-model="name" required />
+
+    <label for="email">Email</label>
+    <input type="text" v-model="email" required />
+
+    <label for="checkedIn">Checked In</label>
+    <input type="text" v-model="checkedIn" required />
+
+    <input type="submit" value="save" />
+  </form>
 </template>
 
 <script>

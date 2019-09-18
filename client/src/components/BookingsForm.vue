@@ -8,7 +8,7 @@
     <input type="text" v-model="email" required />
 
     <label for="checkedIn">Checked In</label>
-    <input type="text" v-model="checkedIn" required />
+    <input type="checkbox" v-model="checkedIn" />
 
     <input type="submit" value="save" />
   </form>
